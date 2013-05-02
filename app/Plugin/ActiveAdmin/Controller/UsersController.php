@@ -11,14 +11,15 @@ class UsersController extends ActiveAdminAppController {
         
         /*
             If under development mode, enable to add user.
+            But now, this does not work correctly...
         */
         if (Configure::read('debug') > 0) {
-            $this->Auth->allow('admin_add');//var_dump($this);
+            $this->Auth->allow('admin_add');
         }
     }
     
     /*
-        When you want to implement view, edit and delete method, see below.
+        When you want to implement more actions, visit at below.
         
         http://book.cakephp.org/2.0/ja/tutorials-and-examples/blog-auth-example/auth.html
     */
@@ -31,9 +32,8 @@ class UsersController extends ActiveAdminAppController {
                     'controller' => 'users', 
                     'action' => 'login'
                 ));
-            } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
+            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
         }
     }
     
