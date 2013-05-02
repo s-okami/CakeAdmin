@@ -21,8 +21,8 @@ class ActiveAdminAppController extends AppController {
         'ActiveAdmin.Filter',
         'Session',
         'Auth' => array(
-            'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
+            'loginRedirect' => array('controller' => '', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
         )
     );
     
